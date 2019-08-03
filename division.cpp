@@ -78,15 +78,6 @@ string subtract_(string num1,string num2){
 	int n1 = num1.size();
 	int n2 = num2.size();
 	int carry = 0;
-	if(n2>n1){
-		string temp = num1;
-		num1 = num2;
-		num2 = temp;
-		int t;
-		t = n1;
-		n1 = n2;
-		n2 = t;
-	}
 	for(int i=n1-1;i>=0;i--){
 		if(i>=n1-n2){
             if(num1[i]-num2[i+n2-n1]+carry<0){
@@ -94,10 +85,9 @@ string subtract_(string num1,string num2){
 			    carry = -1;
             }
             else{
-                    if((num1[i]-num2[i+n2-n1]+carry==0&&i!=0)||(num1[i]-num2[i+n2-n1]+carry!=0)){
                         sum += to_string((num1[i]-num2[i+n2-n1]+carry));
                         carry =0;
-                    }
+
             }
 		}
 		else{
@@ -106,13 +96,8 @@ string subtract_(string num1,string num2){
                 carry = -1;
 			}
 			else{
-                if(num1[i]-'0'+carry == 0&&i!=0){
-                    sum+=to_string(0);
-                }
-                if(num1[i]-'0'+carry!=0)
-                {
                     sum+=to_string(num1[i]-'0'+carry);
-                }
+		    carry = 0;
 			}
 		}
 			         }
@@ -132,7 +117,6 @@ string subtract_(string num1,string num2){
 string multilplication_(string num1,string num2){
   string sum;
   sum = '0';
-  cin>>num1>>num2;
   int n1 = num1.size();
   int n2 = num2.size();
   int carry = 0;
@@ -163,7 +147,7 @@ int main(){
     cin>>num1>>num2;
     string addition = "2";
     int n1 = num1.size();
-	  int n2 = num2.size();
+    int n2 = num2.size();
     string quotient = "1";
     for(int i=n1-n2-1;i>0;i--){
       quotient.push_back('0');
