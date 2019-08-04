@@ -2,8 +2,33 @@
 #include <cstring>
 using namespace std;
 
+int compare(string num1,string num2){
+  int flag=0;
+    int n1 = num1.size();
+    int n2 = num2.size();
+    if(n1==n2){
+        for(int i = 0;i<n1;i++){
+            if(num1[i]>=num2[i]){
+                flag = 1;
+                break;
+            }
+            if(num1[i]<num2[i]){
+            flag = 0;
+            break;}
+        }
+        return flag;
+        }
+    else{
+        return (n1>n2);
+    }
+}
+
 int main(){
-    string sum,num1,num2;
+    string num1,num2;
+    int T;
+    cin>>T;
+    while(T--){
+    string sum;
     cin>>num1>>num2;
 	int n1 = num1.size();
 	int n2 = num2.size();
@@ -41,6 +66,8 @@ int main(){
 	string reversed(sum);
 	reverse(reversed.begin(), reversed.end());
 	cout<<reversed;
+	}
     return 0;
 
 }
+
