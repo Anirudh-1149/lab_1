@@ -54,6 +54,9 @@ string add_(string num1,string num2){
 
 int main(){
     string num1,num2,sum;
+    int T;
+    cin>>T;
+    while(T--){
     sum = '0';
     cin>>num1>>num2;
     int n1 = num1.size();
@@ -75,7 +78,8 @@ int main(){
   for(int i =n2-1;i>=0;i--){
     sum = add_(sum,arr[i]);
   }
-  cout<<sum;
+  cout<<sum<<"\n";
+}
 
     return 0;
 }
