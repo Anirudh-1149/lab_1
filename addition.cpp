@@ -5,7 +5,11 @@ using namespace std;
 
 
 int main(){
-	string num1,num2,sum;
+	string num1,num2;
+	int T;
+    cin>>T;
+    while(T--){
+    string sum;
 	cin>>num1>>num2;
 	int n1 = num1.size();
 	int n2 = num2.size();
@@ -35,7 +39,7 @@ int main(){
 
 	string reversed(sum);
 	reverse(reversed.begin(), reversed.end());
-	cout<<reversed;
-
+	cout<<reversed<<"\n";
+	}
 	return 0;
 }
